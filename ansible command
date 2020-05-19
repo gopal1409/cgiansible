@@ -1,0 +1,33 @@
+419  vi /tmp/z
+  420  ansible centos2 -m copy -a "src=/tmp/z dest=/tmp/z"
+  421  ssh root@centos2
+  422  ansible all -m copy -a "src=/tmp/z dest=/tmp/z"
+  423  ansible centos1 -m file -a "dest/tmp/z mode=600"
+  424  ansible centos1 -m file -a "dest=/tmp/z mode=600"
+  425  ansible centos2 -m file -a "dest=/tmp/z mode=600"
+  426  ansible centos2 -m file -a "dest=/tmp/z mode=600 owner=pushkar group=devprj""
+  427  ansible centos2 -m file -a "dest=/tmp/z mode=600 owner=pushkar group=devprj"
+  428  history
+  429  ls /var/log/
+  430  ls
+  431  v /etc/ansible/ansible.cfg
+  432  vi /etc/ansible/ansible.cfg
+  433  ansible centos2 -m file -a "dest=/tmp/z state=absent"
+  434  ansible centos2 -m file -a "dest=/tmp/z state=ab"
+  435  ansible centos2 -m file -a "dest=/tmp/zb state=directory"
+  436  ssh root@centos2
+  437  clear
+  438  history
+  439  ansible centos2 -m yum -a "name=httpd state=present"
+  440  ansible centos2 -m yum -a "name=httpd state=ab"
+  441  ansible centos2 -m service -a "name=httpd state=started"
+  442  history
+  443  cat /etc/hosts
+  444  ssh root@centos2
+  445  ansible centos2 -m service -a "name=firewalld state=starte"
+  446  ansible centos2 -m service -a "name=firewalld state=stopped"
+  447  history
+  448  ansible centos2 -m cron -a "name='daily-cron-all-servers' minute=*/15 job='/tmp/x.sh'"
+  449  ansible centos2 -m cron -a "name='daily-cron-all-servers' hour=4 job='/tmp/x.sh'"
+  450  ansible centos2 -m cron -a "name='daily-cron-all-servers' special_time=reboot job='/tmp/x.sh'"
+  451  ansible centos2 -m cron -a "nam
